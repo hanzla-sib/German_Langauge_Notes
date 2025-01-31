@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+    <title>Buchungsbestaetigung</title>
+    <link rel="stylesheet" href="./anmeldung.css" />
+    <link rel="stylesheet" href="./anm_style.css" />
+  </head>
+  <body class="bestaetigung">
+    <form
+      name="bsform"
+      method="get"
+      action="https://fitnessstudio-zeta.vercel.app/"
+      onsubmit="return true;"
+      id="bookingForm"
+    >
+      <input type="hidden" name="fid" value="" />
+      <div id="bs_form_content">
+        <div id="bs_form_head">
+          <div id="bs_uni">
+            <div class="bs_space"></div>
+            <div id="bs_uni_text">
+              Hochschulsport der Universit&#228;t Passau
+            </div>
+          </div>
+          <div class="bs_space"></div>
+        </div>
+        <div id="bs_form_main">
+          <div class="bs_form_row">
+            Bitte geben Sie Ihre Emailadresse ein, um Ihre
+            Buchungsbest&auml;tigung abzurufen:
+            <div class="bs_form_entext">
+              Please enter your email address to retrieve your booking
+              confirmation:
+            </div>
+            <br />
+          </div>
+          <div class="bs_form_row">
+            <div class="bs_form_sp1">
+              Email:
+              <div class="bs_form_entext">E-mail Address</div>
+            </div>
+            <div class="bs_form_sp2">
+              <input
+                class="bs_form_field"
+                type="email"
+                name="email"
+                value=""
+                autocomplete="off"
+              />
+            </div>
+          </div>
+          <br /><br />
+        </div>
+        <div id="bs_foot" class="bs_form_foot">
+          <div class="bs_form_row">
+            <div class="bs_left">
+              <input
+                class="sub"
+                type="reset"
+                value="abbrechen"
+                title="Cancellation"
+                id="btn_cancel"
+              />
+            </div>
+            <div class="bs_right">
+              <input
+                class="sub"
+                type="submit"
+                value="weiter"
+                title="continue"
+              />
+            </div>
+          </div>
+          <div class="bs_space"></div>
+        </div>
+      </div>
+    </form>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('bookingForm');
+        form.addEventListener('submit', function(e) {
+          const emailInput = form.querySelector('input[name="email"]');
+          if (emailInput.value) {
+            return true;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
